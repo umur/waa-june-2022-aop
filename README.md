@@ -19,8 +19,7 @@ You can continue to your last lab assignment to implement followings.
 
 ## Submission
 
-* Fork the following repository and push your changes.
-	* [https://github.com/umur/waa-may-2022-aop.git](https://github.com/umur/waa-may-2022-aop.git)
+* Fork the repository and push your changes.
 * Once you finished your project, send a Pull Request. (Send only one Pull Request once you finish the assignment.)
 
 ### Important Notes
