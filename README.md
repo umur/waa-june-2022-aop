@@ -1,11 +1,11 @@
 
-# Lab 5 - Spring AOP
+# Lab 4 - Spring AOP
 
 You can continue to your last lab assignment to implement followings.
 
 ###  Requirements
 --- 
-* Make a `ActivityLog` database table (`id,date,operation,duration`) that will store all methods that have `ExecutionTime` annotations.
+* Make a `ActivityLog` database table (`id,date,operation,duration`) that will store all the operations executed in your project. 
 * Make an `Aspect` that has an annotation pointcut `@ExecutionTime`, when placed on a method, it calculates the time taken to complete that method and writes it to `ActivityLog` table.
 * Make an `Aspect` that has an pointcut for classes in `edu.miu.service` package to check if `POST` requests has `AOP-IS-AWESOME` header. If the header is not present then throw a `AopIsAwesomeHeaderException`.
 
@@ -19,7 +19,8 @@ You can continue to your last lab assignment to implement followings.
 
 ## Submission
 
-* Fork the repository and push your changes.
+* Fork the following repository and push your changes.
+	* [https://github.com/umur/waa-may-2022-aop.git](https://github.com/umur/waa-may-2022-aop.git)
 * Once you finished your project, send a Pull Request. (Send only one Pull Request once you finish the assignment.)
 
 ### Important Notes
