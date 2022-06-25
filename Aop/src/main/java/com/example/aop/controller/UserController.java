@@ -1,5 +1,6 @@
 package com.example.aop.controller;
 
+import com.example.aop.aspect.annotation.ExecutionTime;
 import com.example.aop.entity.Employee;
 import com.example.aop.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,10 @@ public class UserController {
     }
 
     @GetMapping()
+    @ExecutionTime
     public List<Employee> getUsers() {
+
+        System.out.println("INside -------");
         return userService.getUsers();
     }
 
