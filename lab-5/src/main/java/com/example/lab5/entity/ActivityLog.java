@@ -2,7 +2,7 @@ package com.example.lab5.entity;
 
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 public class ActivityLog {
@@ -10,7 +10,7 @@ public class ActivityLog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     private String operation;
