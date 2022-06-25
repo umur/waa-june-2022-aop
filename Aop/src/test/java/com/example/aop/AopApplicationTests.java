@@ -1,13 +1,13 @@
-package com.example.aopprj;
+package com.example.aop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AopPrjApplicationTests {
+class AopApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
