@@ -1,8 +1,10 @@
 package com.example.aop.service.impl;
 
+import com.example.aop.dto.EmployeeDto;
 import com.example.aop.entity.Employee;
 import com.example.aop.repository.IEmployeeRepo;
 import com.example.aop.service.IEmployeeService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +17,24 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Autowired
     private IEmployeeRepo userRepo;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Override
-    public Employee save(Employee user) {
-        return userRepo.save(user);
+    public EmployeeDto save(EmployeeDto user) {
+        Employee employee = modelMapper.map(user, Employee.class);
+        userRepo.save(employee);
+        return user;
     }
 
     @Override
-    public List<Employee> getUsers() {
-        return userRepo.findAll();
+    public List<EmployeeDto> getUsers() {
+        return userRepo.findAll().stream().map(x -> modelMapper.map(x, EmployeeDto.class)).toList();
     }
 
     @Override
-    public Employee getById(int id) {
-        return userRepo.findById(id).get();
+    public EmployeeDto getById(int id) {
+        return userRepo.findById(id).stream().map(x -> modelMapper.map(x, EmployeeDto.class)).findAny().get();
     }
 
     @Override
@@ -36,8 +43,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public Employee edit(int id, Employee user) {
-        user.setId(id);
-        return userRepo.save(user);
+    public EmployeeDto edit(int id, EmployeeDto user) {
+        Employee employee = modelMapper.map(user, Employee.class);
+        employee.setId(id);
+        userRepo.save(employee);
+        return user;
     }
 }

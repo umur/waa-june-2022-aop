@@ -1,18 +1,19 @@
 package com.example.aop.service;
 
+import com.example.aop.dto.EmployeeDto;
 import com.example.aop.entity.Employee;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 public interface IEmployeeService {
-    Employee save(Employee user);
+    EmployeeDto save(EmployeeDto user);
 
-    List<Employee> getUsers();
+    List<EmployeeDto> getUsers();
 
-    Employee getById(int id);
+    EmployeeDto getById(int id);
 
     void deleteById(int id);
 
-    Employee edit(int id, Employee user);
+    EmployeeDto edit(int id, EmployeeDto user);
 }

@@ -1,6 +1,7 @@
 package com.example.aop.controller;
 
 import com.example.aop.aspect.annotation.ExecutionTime;
+import com.example.aop.dto.EmployeeDto;
 import com.example.aop.entity.Employee;
 import com.example.aop.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,12 @@ public class UserController {
     }
 
     @PostMapping()
-    public Employee save(@RequestBody Employee user) {
+    public EmployeeDto save(@RequestBody EmployeeDto user) {
         return userService.save(user);
     }
 
     @PutMapping("/{id}")
-    public Employee edit(@PathVariable int id, @RequestBody Employee user) {
+    public EmployeeDto edit(@PathVariable int id, @RequestBody EmployeeDto user) {
         return userService.edit(id, user);
     }
 
@@ -38,9 +39,9 @@ public class UserController {
 
     @GetMapping()
     @ExecutionTime
-    public List<Employee> getUsers() {
+    public List<EmployeeDto> getUsers() {
 
-        System.out.println("INside -------");
+        System.out.println("Inside -------");
         return userService.getUsers();
     }
 
