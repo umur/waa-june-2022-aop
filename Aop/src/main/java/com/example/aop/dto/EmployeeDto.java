@@ -1,8 +1,11 @@
 package com.example.aop.dto;
 
+import lombok.Data;
+
+@Data
 public class EmployeeDto {
-    public String email;
-    public String password;
-    public String firstname;
-    public String lastname;
+    private String email;
+    private String password;
+    private String firstname;
+    private String lastname;
 }
