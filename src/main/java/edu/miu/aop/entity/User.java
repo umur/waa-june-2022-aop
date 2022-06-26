@@ -8,13 +8,13 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
-    @Column(name = "name")
+    @Column(name="name")
     private String name;
     @JsonBackReference
     @OneToMany(mappedBy = "user")
