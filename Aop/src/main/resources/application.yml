@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/AopDb
+    username: postgres
+    password: 12345678
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+
+#    spring:
+#      jpa:
+#        defer-datasource-initialization=true:
+#      sql:
+#          init:
+#            mode=always:
