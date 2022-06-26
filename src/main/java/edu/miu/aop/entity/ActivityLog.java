@@ -23,4 +23,9 @@ public class ActivityLog {
     private String operation;
     private long duration;
 
+    public ActivityLog(LocalDate date, String operation, long duration) {
+        this.date = date;
+        this.operation = operation;
+        this.duration = duration;
+    }
 }
