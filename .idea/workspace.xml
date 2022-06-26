@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="02b22e53-8322-49d1-91bc-80fe0b7fd3a5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/aspect/ExecutionTimeAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/aspect/LoggerAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/aspect/annotation/ExecutionTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/aspect/annotation/LogMe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/dto/ActivityLogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/entity/ActivityLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation/exception/AopIsAwesomeHeaderException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/BiMappingApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/controller/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/controller/ReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/dto/AddressDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/dto/CategoryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/dto/ReviewDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/entity/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/entity/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/entity/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/repository/AddressRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/repository/ReviewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/AddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/ReviewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/impl/ReviewServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/java/miu/edu/bimapping/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bi-mapping/src/test/java/miu/edu/bimapping/BiMappingApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2B6CGfJ3q2KgsdcBnObCUYEJXyC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "/Users/ashishghimire/IdeaProjects/assignment/WAA-Assignments/waa-june-2022-aop-ashish/aop-implementation/src/main/java/miu/edu/aopimplementation",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MTHome",
+    "spring.configuration.checksum": "34a15bd5fdb34cc1fbcbc477380b21df"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/aop-implementation/src/main/java/miu/edu/aopimplementation" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AopImplementationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="aop-implementation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="miu.edu.aopimplementation.AopImplementationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02b22e53-8322-49d1-91bc-80fe0b7fd3a5" name="Changes" comment="" />
+      <created>1656217054849</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656217054849</updated>
+      <workItem from="1656217058030" duration="73000" />
+      <workItem from="1656217180964" duration="2419000" />
+      <workItem from="1656248075505" duration="4943000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
