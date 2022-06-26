@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aop-implementation/aop-implementation.iml" filepath="$PROJECT_DIR$/aop-implementation/aop-implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/waa-june-2022-aop-ashish.iml" filepath="$PROJECT_DIR$/.idea/waa-june-2022-aop-ashish.iml" />
+    </modules>
+  </component>
+</project>
