@@ -1,8 +1,8 @@
 package com.example.aop.dto;
 
 public class EmployeeDto {
-    private String email;
-    private String password;
-    private String firstname;
-    private String lastname;
+    public String email;
+    public String password;
+    public String firstname;
+    public String lastname;
 }

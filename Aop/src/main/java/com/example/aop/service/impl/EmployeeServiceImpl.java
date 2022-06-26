@@ -5,6 +5,7 @@ import com.example.aop.entity.Employee;
 import com.example.aop.repository.IEmployeeRepo;
 import com.example.aop.service.IEmployeeService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +23,18 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public EmployeeDto save(EmployeeDto user) {
-        Employee employee = modelMapper.map(user, Employee.class);
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Employee employee = new Employee();
+        employee = modelMapper.map(user, Employee.class);
         userRepo.save(employee);
         return user;
     }
 
     @Override
     public List<EmployeeDto> getUsers() {
-        return userRepo.findAll().stream().map(x -> modelMapper.map(x, EmployeeDto.class)).toList();
+        List<EmployeeDto> dtos = userRepo.findAll().stream().map(x -> modelMapper.map(x, EmployeeDto.class)).toList();
+        return dtos;
     }
 
     @Override
