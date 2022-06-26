@@ -7,7 +7,11 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Aspect
@@ -42,5 +46,20 @@ public class ExecutionAspect {
         activityLog.setDate(new Date());
         activityLogRepo.save(activityLog);
         return result;
+    }
+
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.PostMapping)")
+    public void b() {
+    }
+
+    @Around("b()")
+    public Object header(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        RequestAttributes ra = RequestContextHolder.getRequestAttributes();
+        ServletRequestAttributes sra = (ServletRequestAttributes) ra;
+        HttpServletRequest request = sra.getRequest();
+        if (request.getHeader("AOP-IS-AWESOME") != null)
+            return proceedingJoinPoint.proceed();
+        else
+            throw new Exception("AopIsAwesomeHeaderException");
     }
 }
