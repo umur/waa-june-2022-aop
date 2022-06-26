@@ -1,17 +1,30 @@
 package edu.miu.Lab05.controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import edu.miu.Lab05.aspect.annotation.ExecutionTime;
+import edu.miu.Lab05.dto.LabAopDto;
+import edu.miu.Lab05.service.ActivityLogService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/activity")
+@RequiredArgsConstructor
 public class ActivityLogController {
 
-    @GetMapping
-    public void getAll(){
-        System.out.println("Test Statement");
+    ActivityLogService activityLogService;
+    @ExecutionTime
+    @PostMapping
+    public void save() {
+
     }
+
+
+    @GetMapping
+    public List<LabAopDto> getAll() { return activityLogService.getAll();
+    }
+
 
 }
