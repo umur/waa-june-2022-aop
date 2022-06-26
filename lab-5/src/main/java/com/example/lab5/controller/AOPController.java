@@ -4,9 +4,7 @@ import com.example.lab5.aspect.annotation.ExecutionTime;
 import com.example.lab5.dto.ActivityLogDTO;
 import com.example.lab5.service.ActivityLogService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class AOPController {
     @GetMapping
     public List<ActivityLogDTO> getAllLog() {
         return activityLogService.findAllLogs();
+    }
+
+    @PostMapping
+    public void create(@RequestBody ActivityLogDTO activityLogDTO) {
+        activityLogService.createLog(activityLogDTO);
     }
 }
