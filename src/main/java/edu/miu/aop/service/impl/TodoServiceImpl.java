@@ -1,35 +1,47 @@
 package edu.miu.aop.service.impl;
 
+import edu.miu.aop.dtos.TodoDto;
 import edu.miu.aop.entity.Todo;
 import edu.miu.aop.repository.TodoRepo;
 import edu.miu.aop.service.TodoService;
+import org.aspectj.weaver.ast.Var;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class TodoServiceImpl implements TodoService {
     private final TodoRepo todoRepo;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
     public TodoServiceImpl(TodoRepo todoRepo) {
         this.todoRepo = todoRepo;
     }
 
     @Override
-    public List<Todo> getAll() {
-        return (List<Todo>) todoRepo.findAll();
+    public List<TodoDto> getAll() {
+
+        return StreamSupport.stream(todoRepo.findAll().spliterator(), false)
+                .map(u -> modelMapper.map(u, TodoDto.class))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Todo getById(int id) {
-        Optional<Todo> todo = todoRepo.findById(id);
-        return todo.orElse(null);
+    public TodoDto getById(int id) {
+        return modelMapper.map(todoRepo.findById(id).get(), TodoDto.class);
     }
 
     @Override
-    public Todo save(Todo todo) {
-        return todoRepo.save(todo);
+    public TodoDto save(TodoDto todoDto) {
+       var todo = todoRepo.save(modelMapper.map(todoDto, Todo.class));
+       return modelMapper.map(todo, TodoDto.class);
     }
 
     @Override
