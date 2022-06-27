@@ -1,0 +1,29 @@
+
+-- USERS
+
+INSERT INTO public.users (id,email,first_name,lastname,"password",id_address)
+VALUES(1,'11@qq.com','jack1','li1','1',1);
+INSERT INTO public.users (id,email,first_name,lastname,"password",id_address)
+VALUES(2,'22@qq.com','jack2','li2','1',1);
+
+
+-- PRODUCTS
+INSERT INTO public.product (id,name,price,rating,category_id,id_user)
+VALUES(1,'black cat',200,'12',1,1);
+INSERT INTO public.product (id,name,price,rating,category_id,id_user)
+VALUES(2,'white cat',300,'13',1,1);
+
+-- review
+INSERT INTO public.review(id,"comment", product_id, user_id)
+VALUES(1,'good', 1, 1);
+
+-- address
+INSERT INTO public.address (id,city,street,zip)
+VALUES(1,'Fairfield ','1000N, 4th st,',52557);
+
+-- category
+INSERT INTO public.category (id,name)
+VALUES(1,'cat');
+INSERT INTO public.category (id,name)
+VALUES(2,'dog');
+
