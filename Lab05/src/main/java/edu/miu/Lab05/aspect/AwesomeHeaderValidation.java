@@ -21,7 +21,7 @@ public class AwesomeHeaderValidation {
         this.httpServletRequest = httpServletRequest;
     }
 
-    @Pointcut("@annotation(edu.miu.Lab05.aspect.annotation.ExecutionTime)")
+    @Pointcut("within(edu.miu.Lab05.service..*)")
     public void PostHeaderAspect(){}
 
     @Around("PostHeaderAspect()")

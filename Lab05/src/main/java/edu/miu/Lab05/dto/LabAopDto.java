@@ -13,12 +13,12 @@ import java.util.Date;
 public class LabAopDto {
 
     private int id;
-    private LocalDate date;
+    private Date created;
     private Long duration;
     private String operation;
 
-    public LabAopDto(LocalDate date, String operation, long duration) {
-        this.date = date;
+    public LabAopDto(Date date, String operation, long duration) {
+        this.created = date;
         this.operation = operation;
         this.duration = duration;
     }

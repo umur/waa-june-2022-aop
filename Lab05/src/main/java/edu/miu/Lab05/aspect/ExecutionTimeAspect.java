@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Aspect
 @Component
@@ -30,7 +31,7 @@ public class ExecutionTimeAspect {
         var result = proceedingJoinPoint.proceed();
         long end = System.nanoTime();
         System.out.println(proceedingJoinPoint.getSignature().getName()+"takes ns:"+ (end-start));
-        LabAopDto labAopDto = new LabAopDto(LocalDate.now(), (proceedingJoinPoint.getSignature().getName()), end - start);
+        LabAopDto labAopDto = new LabAopDto(new Date(), (proceedingJoinPoint.getSignature().getName()), end - start);
         activityLogService.save(labAopDto);
         return  result;
     }

@@ -10,7 +10,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="tblaop")
+@Table(name="ActivityLog")
 @Data
 @RequiredArgsConstructor
 public class LabAop {
@@ -18,7 +18,8 @@ public class LabAop {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int id;
-    private LocalDate date;
+    @Temporal(TemporalType.DATE)
+    private Date created;
     private Long duration;
     private String operation;
 }
