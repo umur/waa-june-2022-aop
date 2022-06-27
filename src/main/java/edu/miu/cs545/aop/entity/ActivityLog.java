@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class ActivityLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +20,10 @@ public class ActivityLog {
     private LocalDate date;
     private String operation;
     private double duration;
+
+    public ActivityLog(LocalDate date, String operation, double duration){
+        this.date=date;
+        this.operation=operation;
+        this.duration=duration;
+    }
 }
