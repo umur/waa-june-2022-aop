@@ -1,11 +1,14 @@
 package edu.miu.cs545.aop.controller;
 
+import edu.miu.cs545.aop.aspect.annotation.ExecutionTime;
 import edu.miu.cs545.aop.dto.ReviewDto;
 import edu.miu.cs545.aop.dto.UserDto;
 import edu.miu.cs545.aop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -22,11 +25,14 @@ public class UserController {
 
 
     @GetMapping
+    @ExecutionTime
     public List<UserDto> getAllUsers(){
+        System.out.println("HERE WE ARE");
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
+    @ExecutionTime
     public UserDto getUserById(@PathVariable Integer id){
         return userService.getUserById(id);
     }
