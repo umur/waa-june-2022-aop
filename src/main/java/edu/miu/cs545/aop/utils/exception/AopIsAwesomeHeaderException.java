@@ -10,7 +10,6 @@ public class AopIsAwesomeHeaderException extends RuntimeException {
     private String errorMessage;
 
     public AopIsAwesomeHeaderException(String errorMessage){
-        System.out.println("HERE I AM IN EXCEPTION");
-        this.errorMessage=errorMessage;
+        super(errorMessage);
     }
 }

@@ -3,6 +3,7 @@ package edu.miu.cs545.aop.aspect;
 import edu.miu.cs545.aop.entity.ActivityLog;
 import edu.miu.cs545.aop.repo.ActivityLogRepo;
 import edu.miu.cs545.aop.utils.exception.AopIsAwesomeHeaderException;
+import lombok.AllArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,31 +19,19 @@ import java.time.LocalDate;
 
 @Aspect
 @Component
+@AllArgsConstructor
 public class AopIsAwesomeAspect {
     @Autowired
     private HttpServletRequest httpServletRequest;
-    @Autowired
-    private ActivityLogRepo activityLogRepo;
-//    @Around("@annotation(edu.miu.cs545.aop.aspect.annotation.ExecutionTime)")
 
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.PostMapping)")
+    @Pointcut("within(edu.miu.cs545.aop.service..*)")
     public void serviceLocator(){}
 
     @Around("serviceLocator()")
     public Object headerChecker(ProceedingJoinPoint pjp)throws Throwable{
-        RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) requestAttributes;
-        HttpServletRequest request = servletRequestAttributes.getRequest();
-        if (request.getHeader("AOP-IS-AWESOME") != null) {
-            long start = System.nanoTime();
-            var result = pjp.proceed();
-            long finish = System.nanoTime();
-            activityLogRepo.save(new ActivityLog(LocalDate.now(),pjp.getSignature().getName(),finish-start));
-            return result;
-        }
-        else {
-            System.out.println("HERE I AM IN AOP IS AWESOME");
+        if (httpServletRequest.getHeader("AOP-IS-AWESOME") == null&&httpServletRequest.getMethod().equals("POST")) {
             throw new AopIsAwesomeHeaderException("Header 'AOP-IS-AWESOME' Not Found");
         }
+        return pjp.proceed();
     }
 }
