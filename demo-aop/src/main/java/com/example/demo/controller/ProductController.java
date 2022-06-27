@@ -31,6 +31,15 @@ public class ProductController {
     productService.createProduct(dto);
   }
 
+  @PostMapping
+  public void checkingForHeader(@RequestHeader("AOP-IS-AWESOME") String headerName) throws Exception {
+    if (headerName.equalsIgnoreCase("AOP-IS-AWESOME")) {
+      System.out.println("header is here");
+
+    } else throw new Exception("AopIsAwesomeHeaderException");
+
+  }
+
   @DeleteMapping("/{id}")
   @LogMe
   @ExecutionTime

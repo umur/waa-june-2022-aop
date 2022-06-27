@@ -3,6 +3,7 @@ package com.example.demo.aspect;
 import com.example.demo.entity.ActivityLog;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,5 +25,9 @@ public class LoggerAspect {
 
   }
 
+  @AfterThrowing(pointcut = "@annotation(org.springframework.web.bind.annotation.PostMapping)", throwing = "error")
+  public void exceptionHandling(Throwable error) {
+    System.out.println("Exception: " + error);
+  }
 
 }

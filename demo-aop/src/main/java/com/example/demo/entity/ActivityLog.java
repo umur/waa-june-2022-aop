@@ -14,7 +14,7 @@ public class ActivityLog {
   @GeneratedValue
   private int id;
   private Date date;
-  private long operation;
+  private String operation;
   private long duration;
 
 }
