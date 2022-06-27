@@ -40,8 +40,5 @@ public class ActivityAspect {
         activityService.createActivity(new ActivityDto(new Date(),proceedingJoinPoint.getSignature().getName(),duration ));
         return result;
     }
-//    @Around("a()")
-//    public void activity(JoinPoint joinPoint){
-//        System.out.println("inside around");
-//    }
+
 }
